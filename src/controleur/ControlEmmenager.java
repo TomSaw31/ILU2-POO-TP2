@@ -15,8 +15,7 @@ public class ControlEmmenager {
 		return village.trouverHabitant(nom) != null;
 	}
 
-	public void ajouterDruide(String nom, int force, int effetPotionMin,
-			int effetPotionMax) {
+	public void ajouterDruide(String nom, int force, int effetPotionMin, int effetPotionMax) {
 		Druide druide = new Druide(nom, force, effetPotionMin, effetPotionMax);
 		village.ajouterHabitant(druide);
 
