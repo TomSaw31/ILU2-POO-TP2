@@ -20,8 +20,8 @@ public class ControlAcheterProduit {
 		return controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur).acheterProduit(quantite);
 	}
 	
-	public boolean verifierNomAcheteur(String nomAcheteur) {
-		return controlVerifierIdentite.verifierIdentite(nomAcheteur);
+	public boolean verifierNom(String nom) {
+		return controlVerifierIdentite.verifierIdentite(nom);
 	}
 	
 	public String[] rechercherVendeursProduit(String produitAchat) {
