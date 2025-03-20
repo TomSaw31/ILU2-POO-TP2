@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+C:\Users\thoma\Documents\ILU2-POO-TP2\.metadata\.plugins\org.eclipse.jdt.core
-94711529.index
-1865797976.index
-1258494689.index

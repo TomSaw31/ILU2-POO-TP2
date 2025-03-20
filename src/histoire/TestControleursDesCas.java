@@ -9,7 +9,6 @@ import controleur.ControlPrendreEtal;
 import controleur.ControlTrouverEtalVendeur;
 import controleur.ControlVerifierIdentite;
 import personnages.Chef;
-import personnages.Gaulois;
 import villagegaulois.Etal;
 import villagegaulois.Village;
 
@@ -18,11 +17,11 @@ public class TestControleursDesCas {
 
 		// TODO decommenter les cas au fur et a mesure que vous avancez dans le TP
 
-		Village village = new Village("le village des irrÃ©ductibles", 10, 5);
+		Village village = new Village("le village des irréductibles", 10, 5);
 		Chef abraracourcix = new Chef("Abraracourcix", 10, village);
 		village.setChef(abraracourcix);
-		Gaulois asterix = new Gaulois("Asterix", 6);
-		Gaulois obelix = new Gaulois("Obelix", 12);
+		// Gaulois asterix = new Gaulois("Asterix", 6);
+		// Gaulois obelix = new Gaulois("Obelix", 12);
 
 		ControlAfficherVillage controlAfficherVillage = new ControlAfficherVillage(village);
 
@@ -69,11 +68,11 @@ public class TestControleursDesCas {
 		System.out.println("Cas 4 : Prendre etal");
 		ControlPrendreEtal controlPrendreEtal = new ControlPrendreEtal(controlVerifierIdentite, village);
 		int numeroEtal = controlPrendreEtal.prendreEtal("Obelix", "fleur", 5);
-		System.out.println("Obelix a pris l'Ã©tal nÂ°" + (numeroEtal + 1));
+		System.out.println("Obelix a pris l'étal n°" + (numeroEtal + 1));
 
 //		Sortie Console :
 //		Cas 4 : Prendre etal
-//		Obelix a pris l'Ã©tal nÂ°1
+//		Obelix a pris l'étal n°1
 
 		// Cas 5 : trouverEtalVendeur
 
@@ -82,23 +81,23 @@ public class TestControleursDesCas {
 		ControlTrouverEtalVendeur controlTrouverEtalVendeur = new ControlTrouverEtalVendeur(village);
 		Etal etalObelix = controlTrouverEtalVendeur.trouverEtalVendeur("Obelix");
 		Etal etalIntrus = controlTrouverEtalVendeur.trouverEtalVendeur("Intrus");
-		System.out.print("L'Ã©tal d'ObÃ©lix");
+		System.out.print("L'étal d'Obélix");
 		if (etalObelix != null) {
-			System.out.println(" est trouvÃ©");
+			System.out.println(" est trouvé");
 		} else {
-			System.out.println(" n'est pas trouvÃ©");
+			System.out.println(" n'est pas trouvé");
 		}
-		System.out.print("L'Ã©tal de Intrus");
+		System.out.print("L'étal de Intrus");
 		if (etalIntrus != null) {
-			System.out.println(" est trouvÃ©");
+			System.out.println(" est trouvé");
 		} else {
-			System.out.println(" n'est pas trouvÃ©");
+			System.out.println(" n'est pas trouvé");
 		}
 
 //		Sortie Console :
 //		Cas 5 : trouver etal vendeur
-//		L'Ã©tal d'ObÃ©lix est trouvÃ©
-//		L'Ã©tal de Intrus n'est pas trouvÃ©
+//		L'étal d'Obélix est trouvé
+//		L'étal de Intrus n'est pas trouvé
 
 		// Cas 6 : libererEtal
 
@@ -107,11 +106,11 @@ public class TestControleursDesCas {
 		ControlLibererEtal controlLibererEtal = new ControlLibererEtal(controlTrouverEtalVendeur);
 		String[] ventesObelix = controlLibererEtal.libererEtal("Obelix");
 		System.out.println("Les ventes d'Obelix : ");
-		System.out.println("[0] : un boolean indiquant si l'Ã©tal est occupÃ© ");
+		System.out.println("[0] : un boolean indiquant si l'étal est occupé");
 		System.out.println("[1] : nom du vendeur");
 		System.out.println("[2] : produit vendu");
-		System.out.println("[3] : quantitÃ© de produit Ã  vendre au dÃ©but du marchÃ©");
-		System.out.println("[4] : quantitÃ© de produit vendu");
+		System.out.println("[3] : quantité de produit à vendre au début du marché");
+		System.out.println("[4] : quantité de produit vendu");
 		for (String string : ventesObelix) {
 			System.out.println(string);
 		}
@@ -121,11 +120,11 @@ public class TestControleursDesCas {
 //		Sortie Console :
 //		Cas 6 : Liberer etal
 //		Les ventes d'Obelix : 
-//		[0] : un boolean indiquant si l'Ã©tal est occupÃ© 
+//		[0] : un boolean indiquant si l'étal est occupé 
 //		[1] : nom du vendeur
 //		[2] : produit vendu
-//		[3] : quantitÃ© de produit Ã  vendre au dÃ©but du marchÃ©
-//		[4] : quantitÃ© de produit vendu
+//		[3] : quantité de produit Ã  vendre au début du marché
+//		[4] : quantité de produit vendu
 //		true
 //		Obelix
 //		fleur

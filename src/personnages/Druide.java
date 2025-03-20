@@ -14,7 +14,7 @@ public class Druide extends Gaulois {
 		this.effetPotionMax = effetPotionMax;
 		parler("Bonjour, je suis le druide " + nom
 				+ " et ma potion peut aller d'une force " + effetPotionMin
-				+ " Ã  " + effetPotionMax + ".");
+				+ " à " + effetPotionMax + ".");
 	}
 
 	public void preparerPotion() {

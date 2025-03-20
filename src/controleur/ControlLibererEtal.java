@@ -25,7 +25,7 @@ public class ControlLibererEtal {
 			controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur).libererEtal();
 			return etatEtal;
 		}
-		return null;
+		return new String[0];
 	}
 
 }

@@ -1,7 +1,6 @@
 package frontiere;
 
 import controleur.ControlAcheterProduit;
-import controleur.ControlVerifierIdentite;
 
 public class BoundaryAcheterProduit {
 	private ControlAcheterProduit controlAcheterProduit;
@@ -12,17 +11,17 @@ public class BoundaryAcheterProduit {
 
 	public void acheterProduit(String nomAcheteur) {
 		if (!controlAcheterProduit.verifierNom(nomAcheteur)) {
-			System.out.println("Je suis dÃ©solÃ© " + nomAcheteur
-					+ " mais il faut Ãªtre un habitant de notre village pour commercer ici.");
+			System.out.println("Je suis désolé " + nomAcheteur
+					+ " mais il faut être un habitant de notre village pour commercer ici.");
 			return;
 		}
 		String produitAchat = Clavier.entrerChaine("Quel produit voulez-vous acheter ?");
 		String[] vendeurs = controlAcheterProduit.rechercherVendeursProduit(produitAchat);
-		if (vendeurs.length == 0) {
-			System.out.println("DÃ©solÃ©, personne ne vend ce produit au marchÃ©");
+		if (vendeurs == null) {
+			System.out.println("Désolé, personne ne vend ce produit au marché");
 			return;
 		}
-		System.out.println("Chez quel commerÃ§ant voulez-vous acheter des " + produitAchat + " ?");
+		System.out.println("Chez quel commercant voulez-vous acheter des " + produitAchat + " ?");
 		for (int i = 0; i < vendeurs.length; i++) {
 			System.out.println((i + 1) + " - " + vendeurs[i]);
 		}
@@ -30,12 +29,13 @@ public class BoundaryAcheterProduit {
 		do {
 			vendeurChoisi = Clavier.entrerEntier("");
 		} while (vendeurChoisi > vendeurs.length || vendeurChoisi <= 0);
-		
+
 		String nomVendeur = vendeurs[vendeurChoisi - 1];
-		if(!controlAcheterProduit.verifierNom(nomVendeur)) {
-			System.out.println("Je suis dÃ©solÃ© " + nomVendeur + " mais il faut Ãªtre un habitant de notre village pour commercer ici.");
+		if (!controlAcheterProduit.verifierNom(nomVendeur)) {
+			System.out.println("Je suis désolé " + nomVendeur
+					+ " mais il faut être un habitant de notre village pour commercer ici.");
 		}
-		System.out.println(nomAcheteur + " se dÃ©place jusqu'Ã  l'Ã©tal du vendeur " + nomVendeur);
+		System.out.println(nomAcheteur + " se déplace jusqu'à  l'étal du vendeur " + nomVendeur);
 		System.out.println("Bonjour " + nomAcheteur);
 		int quantiteAchat;
 		do {
@@ -45,14 +45,14 @@ public class BoundaryAcheterProduit {
 		int quantiteVendue = controlAcheterProduit.acheterProduit(nomVendeur, quantiteAchat);
 		if (quantiteVendue == 0) {
 			System.out.println(nomAcheteur + " veut acheter " + quantiteAchat + " " + produitAchat
-					+ ", malheureusement il nâ€™y en a plus !");
+					+ ", malheureusement il n'y en a plus !");
 		} else if (quantiteVendue == quantiteAchat) {
 			System.out
-					.println(nomAcheteur + " achÃ¨te " + quantiteAchat + " " + produitAchat + " Ã  " + nomVendeur + ".");
+					.println(nomAcheteur + " achète " + quantiteAchat + " " + produitAchat + " à " + nomVendeur + ".");
 		} else {
 			System.out.println(nomAcheteur + " veut acheter " + quantiteAchat + " " + produitAchat
 					+ ", malheureusement " + nomVendeur + " n'en a plus que " + quantiteVendue + ". " + nomAcheteur
-					+ " achÃ¨te tout le stock de " + nomVendeur + ".");
+					+ " achète tout le stock de " + nomVendeur + ".");
 		}
 
 	}
