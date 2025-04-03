@@ -29,6 +29,7 @@ class ControlTrouverEtalVendeurTest {
 
 	@Test
 	void testTrouverEtalVendeur() {
+		
 		Gaulois gaulois = new Gaulois("Jean",10);
 		village.ajouterHabitant(gaulois);
 		village.installerVendeur(gaulois, "fleurs", 3);
